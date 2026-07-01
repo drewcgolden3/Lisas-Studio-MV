@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lisa's Studio — Your Gym Alternative on Martha's Vineyard</title>
+<meta name="description" content="Personal training, group classes, and private sessions with Lisa Amols in West Tisbury, Martha's Vineyard. Your gym alternative — personal, welcoming, and built around you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#37352F; --sage:#8A9A7B; --sage-d:#5F7050; --terra:#C77B53; --terra-d:#A85E38;
+  --cream:#FBF7F0; --paper:#FFFFFF; --sand:#F0EADF; --line:rgba(55,53,47,.13); --muted:#6E695F;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.72;font-weight:300;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.disp{font-family:'Marcellus',serif;line-height:1.12;font-weight:400;letter-spacing:.005em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:'Nunito Sans';font-weight:600;font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;color:var(--terra)}
+
+header{position:sticky;top:0;z-index:50;background:rgba(251,247,240,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{font-family:'Marcellus';font-size:1.5rem;letter-spacing:.01em}
+.navlinks{display:flex;gap:30px;align-items:center;font-size:.92rem}
+.navlinks a:hover{color:var(--sage-d)}
+.btn{font-family:'Nunito Sans';font-weight:600;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;padding:13px 26px;background:var(--sage-d);color:var(--cream);border-radius:40px;transition:.22s;display:inline-block}
+.btn:hover{background:var(--ink)}
+.btn-terra{background:var(--terra)}.btn-terra:hover{background:var(--terra-d)}
+.btn-out{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.btn-out:hover{background:var(--ink);color:var(--cream)}
+@media(max-width:860px){.navlinks a:not(.btn){display:none}}
+
+.hero{position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:80px 24px}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr;padding:64px 24px}}
+.hero h1{font-size:clamp(2.7rem,6vw,4.6rem);max-width:14ch}
+.hero h1 em{font-style:italic;color:var(--sage-d)}
+.hero p{font-size:1.16rem;max-width:46ch;margin:22px 0 32px;color:var(--muted)}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.portrait{position:relative;border-radius:18px;overflow:hidden;min-height:420px;background:linear-gradient(160deg,var(--sage),var(--sage-d));display:flex;align-items:flex-end;padding:34px}
+.portrait::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='1.5' fill='%23ffffff' opacity='.18'/%3E%3C/svg%3E")}
+.portrait .card{position:relative;background:rgba(251,247,240,.94);border-radius:12px;padding:22px 24px}
+.portrait .card .n{font-family:'Marcellus';font-size:1.4rem}
+.portrait .card .r{font-size:.86rem;color:var(--muted);letter-spacing:.04em}
+
+section{padding:88px 0}
+.sec-head{max-width:58ch;margin-bottom:46px}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3rem);margin-top:12px}
+
+.ways{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:820px){.ways{grid-template-columns:1fr}}
+.way{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:36px 32px;transition:.22s}
+.way:hover{transform:translateY(-5px);box-shadow:0 24px 48px -30px rgba(55,53,47,.4)}
+.way .ic{width:50px;height:50px;border-radius:50%;background:var(--sand);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.way .ic svg{width:26px;height:26px;stroke:var(--terra);fill:none;stroke-width:1.6}
+.way h3{font-size:1.5rem;margin-bottom:8px}
+.way p{font-size:.95rem;color:var(--muted)}
+.way a{display:inline-block;margin-top:16px;font-weight:600;font-size:.88rem;color:var(--sage-d);letter-spacing:.02em}
+.way a:hover{color:var(--terra)}
+
+.about{background:var(--sand)}
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+@media(max-width:760px){.about .wrap{grid-template-columns:1fr}}
+.about .frame{background:linear-gradient(160deg,var(--terra),var(--terra-d));border-radius:18px;min-height:360px;display:flex;align-items:flex-end;padding:32px;color:var(--cream)}
+.about .frame .q{font-family:'Marcellus';font-style:italic;font-size:1.4rem;line-height:1.35}
+.about h2{font-size:clamp(2rem,4vw,2.7rem);margin-bottom:16px}
+.about p{color:var(--muted);margin-bottom:16px}
+
+.quote-band{text-align:center}
+.quote-band .wrap{max-width:760px}
+.quote-band p{font-family:'Marcellus';font-size:1.7rem;line-height:1.5;font-style:italic}
+.quote-band p span{color:var(--terra)}
+.quote-band .who{font-weight:600;letter-spacing:.04em;color:var(--sage-d);margin-top:20px;font-size:.92rem}
+
+.contact{background:var(--ink);color:var(--cream)}
+.contact .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px}
+@media(max-width:760px){.contact .wrap{grid-template-columns:1fr}}
+.contact h2{font-size:clamp(2rem,4.4vw,2.9rem);margin-bottom:20px}
+.contact .line{padding:13px 0;border-bottom:1px solid rgba(251,247,240,.16)}
+.contact .line b{font-family:'Nunito Sans';font-weight:600;color:var(--terra);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:3px}
+.book-box{background:linear-gradient(160deg,var(--sage),var(--sage-d));border-radius:18px;padding:42px 36px}
+.book-box h3{font-family:'Marcellus';font-size:1.8rem;margin-bottom:8px}
+.book-box p{color:rgba(251,247,240,.9);margin-bottom:24px}
+
+footer{background:#2a2924;color:rgba(251,247,240,.6);text-align:center;padding:34px 24px;font-size:.85rem}
+footer a{color:var(--terra)}
+.banner{background:var(--terra);color:var(--cream);text-align:center;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.72rem;padding:9px}
+</style>
+</head>
+<body>
+<div class="banner">Concept Design — Built for Lisa's Studio by The Switchboard Company</div>
+<header><div class="wrap"><nav>
+  <div class="brand">Lisa's Studio</div>
+  <div class="navlinks"><a href="#ways">Train</a><a href="#about">About Lisa</a><a href="#schedule">Schedule</a><a href="#contact">Contact</a><a href="#contact" class="btn">Book a Session</a></div>
+</nav></div></header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">West Tisbury · Martha's Vineyard</div>
+      <h1>Your gym <em>alternative</em> on the Vineyard.</h1>
+      <p>Personal training, small group classes, and private sessions — built around your body, your goals, and your pace. No crowds, no intimidation. Just real, personal coaching.</p>
+      <div class="cta"><a class="btn btn-terra" href="#contact">Book a Session</a><a class="btn btn-out" href="#ways">See What We Offer</a></div>
+    </div>
+    <div class="portrait"><div class="card"><div class="n">Lisa Amols</div><div class="r">Personal Trainer &amp; Studio Owner</div></div></div>
+  </div>
+</section>
+
+<section id="ways">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Ways to train</div><h2>Coaching that meets you where you are.</h2></div>
+    <div class="ways">
+      <div class="way"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div><h3>Personal Training</h3><p>One-on-one sessions designed entirely around your goals — strength, mobility, confidence, or just feeling good in your body.</p><a href="#contact">Start one-on-one →</a></div>
+      <div class="way"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M15 19c0-2 2-3 4-3"/></svg></div><h3>Group Classes</h3><p>Small, welcoming group sessions where everyone gets attention and nobody gets lost in the crowd.</p><a href="#schedule">See the schedule →</a></div>
+      <div class="way"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8l7-5 7 5M5 8v8l7 5 7-5V8"/></svg></div><h3>Private Sessions</h3><p>Book the studio for focused, distraction-free training — solo or with a partner of your choosing.</p><a href="#contact">Reserve a slot →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="frame"><div class="q">"My goal is to help you find a sustainable routine that fosters a healthy sense of self — physically and mentally."</div></div>
+    <div>
+      <div class="eyebrow">Meet your trainer</div>
+      <h2>Training that's personal — because it is.</h2>
+      <p>Lisa's Studio isn't a big-box gym. It's a personal space on Martha's Vineyard where the coaching is hands-on, the atmosphere is welcoming, and the program is built for you — not a template.</p>
+      <p>Whether you're returning to movement, building strength, or looking for an alternative to the crowded gym floor, you'll find a calmer, more personal way to train.</p>
+      <a class="btn btn-terra" style="margin-top:6px" href="#contact">Work With Lisa</a>
+    </div>
+  </div>
+</section>
+
+<section class="quote-band" id="schedule">
+  <div class="wrap">
+    <div class="eyebrow" style="margin-bottom:24px">What clients say</div>
+    <p>"A personal, welcoming alternative to the gym — exactly what I was looking for on the <span>island.</span>"</p>
+    <div class="who">— A Lisa's Studio client</div>
+    <div style="margin-top:34px"><a class="btn btn-out" href="#contact">View Class Schedule &amp; Rates</a></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Get in touch</div>
+      <h2>23 Manters Path, West Tisbury.</h2>
+      <div class="line"><b>Studio</b>23 Manters Path, West Tisbury, MA — Martha's Vineyard</div>
+      <div class="line"><b>Phone</b>508-693-1009</div>
+      <div class="line"><b>Email</b>amols@comcast.net</div>
+    </div>
+    <div class="book-box"><h3>Ready to start?</h3><p>Reach out to book your first session — personal training, a class, or a private studio slot.</p><a class="btn btn-terra" href="#">Book a Session</a></div>
+  </div>
+</section>
+
+<footer>
+  <p>Lisa's Studio · 23 Manters Path, West Tisbury, MA · 508-693-1009</p>
+  <p style="margin-top:10px">Concept site &middot; Website by <a href="https://switchboardcompany.com">The Switchboard Company</a></p>
+</footer>
+</body>
+</html>
